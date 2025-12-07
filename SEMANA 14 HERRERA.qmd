@@ -1,0 +1,105 @@
+---
+title: "SEMANA 14"
+author: "HERRERA_SALVADOR"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+#SEMANA 14
+
+```{r}
+#IMPORTAMOS LA DATA
+data<- read_csv("C:/Users/Dell/Downloads/covid_19 (2).csv")
+View(covid_19_2_)
+
+```
+
+You can add options to executable code like this
+
+```{r}
+#Vemos las 6 primeras filas 
+head(data)
+```
+
+```{r}
+#Estructura de la data 
+str(data)
+```
+
+```{r}
+#MEDIDAS DE TENDENCIA CENTRAL 
+#MEDIA ARITMETICA 
+mean(data$Derivation.cohort)
+mean(data$severidad)
+```
+
+```{r}
+#MEDIANA 
+median(data$Derivation.cohort)
+median(data$severidad)
+
+```
+
+```{r}
+#MODA (DERIVATION.COHORT, SEVERIDAD) 
+mode_Derivation.cohort<- names(sort(table(data$Derivation.cohort),decreasing = TRUE))
+mode_severidad<- names(sort(table(data$severidad),decreasing = TRUE))
+```
+
+```{r}
+#MEDIDAS DE DISPERSION 
+#VARIANZA 
+var(data$Derivation.cohort,na.rm = TRUE)
+var(data$severidad,na.rm = TRUE)
+```
+
+```{r}
+#DESVIACION ESTANDAR
+sd(data$Derivation.cohort,na.rm = TRUE)
+sd(data$severidad,na.rm = TRUE)
+```
+
+```{r}
+#RANGO
+range(data$Derivation.cohort,na.rm = TRUE)
+range(data$severidad,na.rm = TRUE)
+
+```
+
+```{r}
+#RANGO INTERCUARTILICO
+IQR(data$Derivation.cohort,na.rm = TRUE)
+IQR(data$severidad,na.rm = TRUE)
+```
+
+```{r}
+#MEDIDAS DE POSICION
+quantile(data$Derivation.cohort,probs = c(0.25,0.5,0.75,0.90),na.rm = TRUE) 
+quantile(data$severidad,probs = c(0.25,0.5,0.75,0.90),na.rm = TRUE)
+```
+
+```{r}
+#RESUMEN 
+summary(data$Derivation.cohort)
+summary(data$severidad)
+
+```
+
+```{r}
+#RESUMEN DE TODAS LAS VARIABLES 
+summary(data)
+
+```
+
+```{r}
+#VISUALIZACION GRAFICA 
+#HISTOGRAMA 
+ggplot(data,aes(x=Derivation.cohort))+geom_histogram(bins = 30)+theme_minimal()
+ggplot(data,aes(x=severidad))+geom_histogram(bins = 30)+theme_minimal()
+```

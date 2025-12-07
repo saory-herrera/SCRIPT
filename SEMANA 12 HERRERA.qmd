@@ -1,0 +1,49 @@
+---
+title: "SEMANA_12"
+author: "HERRERA_SALVADOR"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+#MEDIDAS DE DISPERSION
+
+```{r}
+#VARIANZA
+var(data_limpia$Derivation.cohort, na.rm = TRUE)
+```
+
+```{r}
+#DESVIACION ESTANDAR
+sd(data_limpia$Derivation.cohort, na.rm = TRUE)
+```
+
+```{r}
+#RANGO
+range(data_limpia$Derivation.cohort, na.rm = TRUE)
+```
+
+```{r}
+#RANGO INTERCUARTILICO 
+IQR(data_limpia$Derivation.cohort, na.rm = TRUE)
+```
+
+```{r}
+#MEDIDAS DE POSICION 
+quantile(data_limpia$Derivation.cohort, probs = c (0.25,0.5,0.75,0.90),na.rm = TRUE)
+```
+
+```{r}
+#LOS 6 PRIMEROS DE LA FILA
+head(data_limpia)
+```
+
+```{r}
+#RESUMEN
+summary(data_limpia$Derivation.cohort)
+```

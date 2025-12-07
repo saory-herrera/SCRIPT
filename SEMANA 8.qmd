@@ -1,0 +1,33 @@
+---
+title: "SEMANA 8"
+author: "HERRERA SALVADOR"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+INSTALACION DE PAQUETES/HISTOGRAMA
+
+```{r}
+
+#INSTALACION DE PAQUETES
+install.packages("readr")
+install.packages("ggplot2")
+```
+
+You can add options to executable code like this
+
+```{r}
+#HISTOGRAMA
+hist(data$Derivation.cohort,
+     main = "Histograma de Derivation.cohort",
+     xlab = "Valores",
+     ylab = "Frecuencia",
+     col = "yellow",
+     border = "red")
+```
